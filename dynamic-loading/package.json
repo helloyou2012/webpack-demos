@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "build": "rm -rf dist && webpack",
-    "dev": "webpack-dev-server --devtool eval --progress"
+    "build": "rm -rf dist && webpack -p",
+    "dev": "webpack-dev-server -d --progress"
   },
   "devDependencies": {
     "babel-loader": "^6.2.4",
