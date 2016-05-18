@@ -1,6 +1,8 @@
+const webpack = require('webpack');
+
 module.exports = {
   entry: {
-    "index": "./index.js"
+    index: './index.js'
   },
   output: {
     path: 'dist',
@@ -10,9 +12,10 @@ module.exports = {
     loaders: [{
       test: /\.js[x]?$/,
       exclude: /node_modules/,
-      loader: 'babel-loader',
+      loader: 'babel',
       query: {
-        presets: ['es2015-webpack', 'stage-0']
+        cacheDirectory: true,
+        presets: ['es2015-webpack', 'react', 'stage-0']
       }
     }]
   }
