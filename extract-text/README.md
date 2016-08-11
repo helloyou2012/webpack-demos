@@ -1,8 +1,8 @@
-Dynamic Loading
+Extract Text
 ===============
 
-- `System.import`
-- `__webpack_public_path__`
+- `extract-text-webpack-plugin`
+- `multi config`
 
 ```
 npm i
