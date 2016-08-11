@@ -15,7 +15,13 @@ module.exports = {
       loader: 'babel',
       query: {
         cacheDirectory: true,
-        presets: ['es2015-webpack', 'react', 'stage-0']
+        presets: [
+          ['es2015', {
+            modules: false
+          }],
+          'react',
+          'stage-0'
+        ]
       }
     }]
   }
