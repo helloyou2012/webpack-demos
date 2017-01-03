@@ -1,10 +1,20 @@
 const webpack = require('webpack');
 const join = require('path').join;
+const glob = require('glob');
+
+const pages = glob
+  .sync('page/**/index.js')
+  .reduce((obj, file) => {
+    obj[file.replace(/\.js$/, '')] = join(__dirname, file);
+    return obj;
+  }, {});
+const entry = Object.assign({
+  lib: glob.sync('./lib/*.js'),
+  component: glob.sync('./component/*.js'),
+}, pages);
 
 module.exports = {
-  entry: {
-    index: './index.js'
-  },
+  entry: entry,
   output: {
     path: join(__dirname, 'dist'),
     filename: '[name].js'
@@ -25,5 +35,11 @@ module.exports = {
         ]
       }
     }]
-  }
+  },
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      names: ['component', 'lib'],
+      minChunks: Infinity
+    })
+  ]
 };
