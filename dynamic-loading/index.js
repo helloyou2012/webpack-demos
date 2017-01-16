@@ -5,7 +5,7 @@ import test from './test';
 test();
 
 function onClick(path) {
-  System.import('./module/' + path).then(module => {
+  import('./module/' + path).then(module => {
     module.test();
   }).catch(err => {
     console.log('Chunk loading failed');

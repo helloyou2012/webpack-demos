@@ -22,6 +22,9 @@ module.exports = {
           }],
           'react',
           'stage-0'
+        ],
+        plugins: [
+          'syntax-dynamic-import'
         ]
       }
     }]
