@@ -10,7 +10,7 @@
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
     "glob": "^7.1.1",
-    "webpack": "^2.x",
+    "webpack": "^3.x",
     "webpack-dev-server": "^2.x"
   }
 }
